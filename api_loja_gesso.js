@@ -98,4 +98,3 @@ app.delete('/excluir/produtos', (request,response) => {
 app.listen(3000, () => {
     console.log('Loja online...')
 })
-
