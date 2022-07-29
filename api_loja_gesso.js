@@ -31,3 +31,17 @@ app.delete('/excluir/cliente', (request,response) => {
     return response.send(delete_cliente)
 })
 
+const funcionario = [];
+
+app.post('/cadastro/funcionario', (request, response) => {
+    const validarfuncionario = funcionario.find((vf) => vf.nome == request.body.nome)
+        if (validarfuncionario){
+            return response.send("Status: nome Já Cadastrado.")}
+        
+        funcionario.push({
+        id: uuid.v4(),
+        nome: request.body.nome,
+        função: request.body.função
+    })
+    return response.send("Resgistrado com sucesso.")
+})
