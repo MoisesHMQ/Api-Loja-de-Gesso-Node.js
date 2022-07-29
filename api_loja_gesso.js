@@ -67,3 +67,18 @@ app.delete('/excluir/funcionarios', (request,response) => {
         
     return response.send(delete_funcionarios)
 })
+
+const produtos = [];
+
+app.post('/cadastro/produtos', (request, response) => {
+    const validar_ = produtos.find((user) => user.produto == request.body.produto)
+        if (validar_){
+            return response.send("Status: Produto Já Cadastrado.")}
+        
+        produtos.push({
+        id: uuid.v4(),
+        produto: request.body.produto
+
+    })
+    return response.send("Produto cadastrado com sucesso.")
+})
