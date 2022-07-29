@@ -55,3 +55,8 @@ app.post('/login', (request, response) => {
             return response.send("Erro: nome ou função incorretos.");
         }
     })
+
+app.get('/listar/funcionario', (request, response) => {
+    console.log(request.body);
+    return response.json(funcionario)
+})
