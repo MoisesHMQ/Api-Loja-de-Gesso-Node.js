@@ -45,3 +45,13 @@ app.post('/cadastro/funcionario', (request, response) => {
     })
     return response.send("Resgistrado com sucesso.")
 })
+
+app.post('/login', (request, response) => {
+    const login = funcionario.find((user) => user.nome == request.body.nome && user.função == request.body.função)
+        if(login){
+            return response.send("Status: Bom dia, tenha um bom trabalho")
+
+        }else{
+            return response.send("Erro: nome ou função incorretos.");
+        }
+    })
