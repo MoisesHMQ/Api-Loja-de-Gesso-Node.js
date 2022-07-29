@@ -60,3 +60,10 @@ app.get('/listar/funcionario', (request, response) => {
     console.log(request.body);
     return response.json(funcionario)
 })
+
+app.delete('/excluir/funcionarios', (request,response) => {
+    const id = funcionario.indexOf('id');
+    const delete_funcionarios = funcionario.splice(id,1)
+        
+    return response.send(delete_funcionarios)
+})
