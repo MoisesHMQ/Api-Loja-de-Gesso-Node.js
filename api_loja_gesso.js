@@ -88,3 +88,10 @@ app.get('/listar/produtos', (request, response) => {
     return response.json(produtos)
 })
 
+app.delete('/excluir/produtos', (request,response) => {
+    const id = produtos.indexOf('id');
+    const delete_produtos = produtos.splice(id,1)
+        
+    return response.send(delete_produtos)
+})
+
