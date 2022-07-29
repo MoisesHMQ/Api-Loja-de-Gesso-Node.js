@@ -82,3 +82,9 @@ app.post('/cadastro/produtos', (request, response) => {
     })
     return response.send("Produto cadastrado com sucesso.")
 })
+
+app.get('/listar/produtos', (request, response) => {
+    console.log(request.body);
+    return response.json(produtos)
+})
+
