@@ -95,3 +95,7 @@ app.delete('/excluir/produtos', (request,response) => {
     return response.send(delete_produtos)
 })
 
+app.listen(3000, () => {
+    console.log('Loja online...')
+})
+
